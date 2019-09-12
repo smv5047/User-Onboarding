@@ -30,16 +30,16 @@ useEffect(() => {
             
             <label>
                 <span>Agree to the Terms of Service:</span>
-                <Field type="checkbox" name="terms_of_service"/>
+                <Field type="checkbox" name="tos"/>
             </label>
 
             <button type="submit">Submit</button>
             
-            {users.map((user) => (
+            {/* {users.map((user) => (
                 <div>Name: {user.name}</div>
-            ))}
-            {users.map((user) => {
-                return <div>Name:{user.name}</div>
+            ))} */}
+            {users.map((user, index) => {
+                return <div key={index}>Name: {user.name}</div>
             })}
 
         </Form>
@@ -50,24 +50,13 @@ useEffect(() => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 export default withFormik({
     mapPropsToValues: (values) => {
         return{
-            text: values.text || 'e.g. Jane Doe',
+            name: values.name || 'e.g. Jane Doe',
             email: values.email || 'e.g. janedoe@gmail.com',
             password: values.password || 'e.g. the$tr0nge$TP@$SW0RdEvEr',
-            checkbox: values.checkbox || false,
+            tos : values.checkbox || false,
         }
     },
     
@@ -75,7 +64,7 @@ export default withFormik({
         name: yup.string().required('Name is required'),
         email: yup.string().required('Email is required'),
         password: yup.string().required('Password is required'),
-        checkbox: yup.boolean().oneOf([true], 'Terms of Service Must Be Agreed To')
+        tos: yup.boolean().oneOf([true], 'Terms of Service Must Be Agreed To')
     }),
 
     handleSubmit: (values, {setStatus}) => {
