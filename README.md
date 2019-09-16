@@ -5,12 +5,12 @@ We've seen many different styles of form management by now -- simple to complex.
 
 ## Set Up The Project
 
-- [ ] Start off by installing a blank React app by using Create React App.
-- [ ] Add the following as dependencies inside your React app:
+- [X] Start off by installing a blank React app by using Create React App.
+- [X] Add the following as dependencies inside your React app:
   - `formik`
   - `yup`
   - `axios`
-- [ ] Create a component file called `Form.js`, import it into your `App.js` file, and place the component in your JSX there.
+- [X] Create a component file called `Form.js`, import it into your `App.js` file, and place the component in your JSX there.
 
 ## STEP 1 - Create Your Formik Form
 
@@ -44,6 +44,7 @@ When you get your data back, you will want to do something with it, right? Let's
 - Set up a state property called `users` that is initialized with an empty array
 - Every time you make a `POST` request, and get that new user data back, update your `users` state with the new user added to the array
 - Render `users` in your app. This can be done in the `Form` component, or you can pass the array down to another component and render the `users` there
+
 
 ## Stretch Goals
 
